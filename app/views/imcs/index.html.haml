@@ -1,0 +1,19 @@
+%h1 Listing imcs
+%table
+  %tr
+    %th Poids
+    %th Date
+    %th Imc
+    %th
+    %th
+    %th
+  - @imcs.each do |imc|
+    %tr
+      %td= imc.poids
+      %td= imc.date
+      %td= imc.imc
+      %td= link_to 'Show', imc
+      %td= link_to 'Edit', edit_imc_path(imc)
+      %td= link_to 'Destroy', imc, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Imc', new_imc_path

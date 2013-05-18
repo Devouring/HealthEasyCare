@@ -1,0 +1,31 @@
+%p#notice= notice
+%p
+  %b Age:
+  = @user.age
+%p
+  %b Login:
+  = @user.login
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Medecin:
+  = @user.medecin
+  
+= link_to 'Edit', edit_user_path(@user)
+
+= link_to 'Log out', users_path
+
+= link_to 'Add IMC', new_imc_path
+
+
+= @imcs.each do |imc|
+  %p 
+    = imc.taille
+  %p  
+    = imc.poids   
+  %p 
+    = imc.value

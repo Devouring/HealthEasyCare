@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Poids:
+  = @imc.poids
+%p
+  %b Date:
+  = @imc.date
+%p
+  %b Imc:
+  = @imc.imc
+= link_to 'Edit', edit_imc_path(@imc)
+|
+\#{link_to 'Back', imcs_path}

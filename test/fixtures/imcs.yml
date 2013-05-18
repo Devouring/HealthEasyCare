@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  poids: 1
+  date: 2013-05-18 16:12:41
+  imc: 1
+
+two:
+  poids: 1
+  date: 2013-05-18 16:12:41
+  imc: 1

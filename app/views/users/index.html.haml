@@ -1,0 +1,13 @@
+%h1 Welcome to Health Easy Care
+= form_tag sign_in_users_path, :class => "form" do
+  .row
+    .span4
+      = text_field :user, :login, :class => "input", :autofocus => true, :placeholder => "Login", :class=> "input-large"
+  .row
+    .span4
+      = text_field :user, :password, :class => "password", :autofocus => true, :placeholder => "password", :class=> "input-large"                 
+  .row
+    .span4
+      = submit_tag "Log in", :class => "btn btn-large btn-primary"
+      
+= link_to 'Sign in', new_user_path
