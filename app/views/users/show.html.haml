@@ -1,4 +1,4 @@
-%p#notice= notice
+
 %p
   %b Age:
   = @user.age
@@ -21,11 +21,22 @@
 
 = link_to 'Add IMC', new_imc_path
 
-
-= @imcs.each do |imc|
-  %p 
-    = imc.taille
-  %p  
-    = imc.poids   
-  %p 
-    = imc.value
+%table
+  %tr
+    %th Date
+    %th IMC
+    %th Size
+    %th Weight
+    %th
+    %th  
+  - @imcs.each do |imc|
+    %tr
+      %td
+        = imc.date
+      %td   
+        = imc.value
+      %td  
+        = imc.taille   
+      %td 
+        = imc.poids
+      %td= link_to 'Destroy', imc, method: :delete, data: { confirm: 'Are you sure?' }

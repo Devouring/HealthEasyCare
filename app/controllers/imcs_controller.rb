@@ -71,10 +71,6 @@ class ImcsController < ApplicationController
   def destroy
     @imc = Imc.find(params[:id])
     @imc.destroy
-
-    respond_to do |format|
-      format.html { redirect_to imcs_url }
-      format.json { head :no_content }
-    end
+    redirect_to user_path(session[:user])
   end
 end
