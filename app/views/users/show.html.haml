@@ -21,6 +21,10 @@
 
 = link_to 'Add IMC', new_imc_path
 
+= link_to 'Show Vaccin', show_vaccin_user_path(@user)
+
+#chartdisplay
+
 %table
   %tr
     %th Date
@@ -29,14 +33,20 @@
     %th Weight
     %th
     %th  
+  - data = "["   
   - @imcs.each do |imc|
     %tr
       %td
         = imc.date
       %td   
-        = imc.value
+        = sprintf("%.2f", imc.value)
       %td  
         = imc.taille   
       %td 
         = imc.poids
-      %td= link_to 'Destroy', imc, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'delete', imc, method: :delete, data: { confirm: 'Are you sure?' }
+      - data = data + "[#{imc.date.to_i}, #{imc.poids}], "
+  - data = data[0..-2] + "]"  
+ 
+  
+%div{:id => 'dataforchart', :class => data}        

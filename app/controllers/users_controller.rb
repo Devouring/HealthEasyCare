@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @imcs = @user.imcs
+
   end
 
   # GET /users/new
@@ -86,5 +87,10 @@ class UsersController < ApplicationController
       flash[:notice] = "Wrong user or password"
       redirect_to users_path
     end
+  end
+  def show_vaccin
+    @user = User.find(params[:id])
+    @vaccins = @user.vaccins
+
   end
 end

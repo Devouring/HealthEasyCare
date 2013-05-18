@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %b Nom:
+  = @vaccin.nom
+%p
+  %b Date:
+  = @vaccin.date
+%p
+  %b Rappel:
+  = @vaccin.rappel
+%p
+  %b User:
+  = @vaccin.user_id
+= link_to 'Edit', edit_vaccin_path(@vaccin)
+|
+\#{link_to 'Back', vaccins_path}

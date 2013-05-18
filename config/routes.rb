@@ -1,8 +1,14 @@
 HealthEasyCare::Application.routes.draw do
 
+  resources :vaccins
+
+
   resources :users do
     collection do
       post 'sign_in'
+    end
+    member do
+      get 'show_vaccin'
     end  
   end
   resources :imcs

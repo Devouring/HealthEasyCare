@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nom: MyString
+  date: 2013-05-18 19:09:32
+  rappel: 2013-05-18 19:09:32
+  user_id: 1
+
+two:
+  nom: MyString
+  date: 2013-05-18 19:09:32
+  rappel: 2013-05-18 19:09:32
+  user_id: 1

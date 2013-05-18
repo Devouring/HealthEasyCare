@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518152700) do
+ActiveRecord::Schema.define(:version => 20130518170932) do
 
   create_table "imcs", :force => true do |t|
     t.integer  "poids"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20130518152700) do
     t.string   "password"
     t.string   "email"
     t.string   "medecin"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "vaccins", :force => true do |t|
+    t.string   "nom"
+    t.datetime "date"
+    t.datetime "rappel"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

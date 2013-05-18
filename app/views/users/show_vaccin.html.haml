@@ -1,0 +1,43 @@
+
+%p
+  %b Age:
+  = @user.age
+%p
+  %b Login:
+  = @user.login
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Medecin:
+  = @user.medecin
+  
+= link_to 'Edit', edit_user_path(@user)
+
+= link_to 'Log out', users_path
+
+= link_to 'Add vaccin', new_vaccin_path
+
+= link_to 'Show IMC', user_path(@user)
+
+#chartdisplay
+
+%table
+  %tr
+    %th Name
+    %th Date administrated
+    %th Date
+    %th
+    %th  
+  - @vaccins.each do |vaccin|
+    %tr
+      %td
+        = vaccin.nom
+      %td   
+        = vaccin.date
+      %td  
+        = vaccin.rappel   
+      %td= link_to 'delete', vaccin, method: :delete, data: { confirm: 'Are you sure?' }  

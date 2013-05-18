@@ -1,0 +1,21 @@
+%h1 Listing vaccins
+%table
+  %tr
+    %th Nom
+    %th Date
+    %th Rappel
+    %th User
+    %th
+    %th
+    %th
+  - @vaccins.each do |vaccin|
+    %tr
+      %td= vaccin.nom
+      %td= vaccin.date
+      %td= vaccin.rappel
+      %td= vaccin.user_id
+      %td= link_to 'Show', vaccin
+      %td= link_to 'Edit', edit_vaccin_path(vaccin)
+      %td= link_to 'Destroy', vaccin, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Vaccin', new_vaccin_path

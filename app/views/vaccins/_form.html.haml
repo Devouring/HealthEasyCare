@@ -1,0 +1,23 @@
+= form_for(@vaccin) do |f|
+  - if @vaccin.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@vaccin.errors.count, "error")
+        prohibited this vaccin from being saved:
+      %ul
+        - @vaccin.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :nom
+    %br/
+    = f.text_field :nom
+  .field
+    = f.label :date
+    %br/
+    = f.datetime_select :date
+  .field
+    = f.label :rappel
+    %br/
+    = f.datetime_select :rappel
+  .actions
+    = f.submit
