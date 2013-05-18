@@ -6,7 +6,7 @@ class ChangeTailleColumn < ActiveRecord::Migration
   end
 
   def down
-    remove_column :users, :taille, :integer
+    remove_column :imcs, :taille, :integer
     add_column :users, :taille, :integer
   end
 end
